@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CanvasController">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="File">
+                    <MenuItem onAction="#onSave" text="Save" />
+                    <MenuItem onAction="#onExit" text="Exit" />
+                </Menu>
+            </MenuBar>
+            <ToolBar>
+                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="880.0" spacing="5">
+                    <Label text="Size" />
+                    <Slider fx:id="brushSize" prefHeight="16.0" prefWidth="158.0" />
+                    <ColorPicker fx:id="colorPicker" prefHeight="26.0" prefWidth="104.0">
+                        <value>
+                            <Color />
+                        </value>
+                        <HBox.margin>
+                            <Insets left="10.0" />
+                        </HBox.margin></ColorPicker>
+                    <CheckBox fx:id="eraser" text="Eraser">
+                        <HBox.margin>
+                            <Insets left="20.0" />
+                        </HBox.margin></CheckBox>
+                    <Button fx:id="clear" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="Clear">
+                        <HBox.margin>
+                            <Insets left="20.0" />
+                        </HBox.margin></Button>
+                    <Separator orientation="VERTICAL" prefHeight="35.0" prefWidth="61.0">
+                        <HBox.margin>
+                            <Insets left="40.0" />
+                        </HBox.margin></Separator>
+               <Button fx:id="predictor" mnemonicParsing="false" onAction="#predictMethod" text="Predict" />
+               <CheckBox fx:id="lang" contentDisplay="RIGHT" mnemonicParsing="false" text="Kannada">
+                  <padding>
+                     <Insets left="50.0" />
+                  </padding>
+               </CheckBox>
+                </HBox>
+            </ToolBar>
+        </VBox>
+    </top>
+    <center>
+        <Canvas fx:id="canvas" height="600" width="600.0">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <effect>
+                <Glow level="0.2" />
+            </effect>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin></Canvas>
+    </center>
+    <right>
+        <VBox prefHeight="600.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextArea fx:id="list" editable="false" prefHeight="565.0" prefWidth="250.0" promptText="Predictions">
+                    <font>
+                        <Font name="Tlwg Mono Bold" size="28.0" />
+                    </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></TextArea>
+
+            </children>
+         <BorderPane.margin>
+            <Insets right="25.0" top="10.0" />
+         </BorderPane.margin></VBox>
+    </right>
+    <bottom>
+        <HBox prefHeight="35.0" prefWidth="774.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="wordLabel" contentDisplay="CENTER" prefHeight="35.0" prefWidth="457.0" text="Digit Predictor using JAVA">
+                    <font>
+                        <Font name="Tlwg Mono Bold" size="18.0" />
+                    </font>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+               <HBox.margin>
+                  <Insets left="40.0" />
+               </HBox.margin></Label>
+                <Label fx:id="playerDisplay" prefHeight="35.0" prefWidth="336.0" text="OOPs Part B" textFill="#1b34d7">
+                    <padding>
+                        <Insets left="80.0" />
+                    </padding>
+                    <HBox.margin>
+                        <Insets left="100.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font name="Tlwg Mono Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin></HBox>
+    </bottom>
+</BorderPane>
