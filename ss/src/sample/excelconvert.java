@@ -27,7 +27,7 @@ public class excelconvert
         try {
             BufferedReader br = new BufferedReader(new FileReader(path));
             while ((line = br.readLine()) != null) {
-                Pattern P = Pattern.compile("[0-9]+(,[0-9]+)+");
+                Pattern P = Pattern.compile("(?<=\s|^)(\d{1,3}(,\d{3})*(\.\d\d)?|\.\d\d)(?=\s|$)");
                 Matcher m = P.matcher(line);
                 if (m.matches() == false) throw new csvException();
                 String[] values = line.split(splitBy);
